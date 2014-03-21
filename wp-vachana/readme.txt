@@ -6,7 +6,7 @@ License URI: http://www.gnu.org/copyleft/gpl.html
 Tags: kannada, unicode, literature, vachana, sahitya, widget
 Requires at least: 2.9
 Tested up to: 3.8.1
-Stable tag: 1.0
+Stable tag: 1.0.1
 
 Display daily vachana from http://vachana.sanchaya.net
 

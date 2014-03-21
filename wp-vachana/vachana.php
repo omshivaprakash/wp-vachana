@@ -4,7 +4,7 @@ Plugin Name: Vachana Sanchaya Daily Vachana
 Plugin URI: https://github.com/omshivaprakash/wp-vachana
 Description: This widget is disgned to display the daily vachana from the site vachana.sanchaya.net to wordpress blogs. 
 Author: Omshivaprakash H L
-Version: 1.0
+Version: 1.0.1
 Author URI: http://www.linuxaayana.net
 */
 
