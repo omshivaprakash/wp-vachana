@@ -120,7 +120,7 @@ function vsdv_register_widgets() {
 add_action( 'widgets_init', 'vsdv_register_widgets' );
 
 // Donate link on manage plugin page
-function mtk_pluginspage_links( $links, $file ) {
+function vsdv_pluginspage_links( $links, $file ) {
 
 $plugin = plugin_basename(__FILE__);
 
@@ -137,5 +137,5 @@ array( '<a href="http://vachana.sanchaya.net" target="_blank" title="Vachana San
 return $links;
 
 	}
-add_filter( 'plugin_row_meta', 'mtk_pluginspage_links', 10, 2 );
+add_filter( 'plugin_row_meta', 'vsdv_pluginspage_links', 10, 2 );
 ?>
