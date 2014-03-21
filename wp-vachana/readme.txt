@@ -38,6 +38,9 @@ Use Linuxaayan's website's  <a href="http://linuxaayana.net/contact-us/">contact
 
 == Changelog ==
 
+= 1.0.1 =
+* Fixed conflicting function
+
 = 1.0 =
 
 * Initial public release.
