@@ -113,11 +113,11 @@ class Vachana_Sanchaya_Widget extends WP_Widget {
 	}
 }
 
-function mtk_register_widgets() {
+function vsdv_register_widgets() {
 	register_widget( 'Vachana_Sanchaya_Widget' );
 }
 
-add_action( 'widgets_init', 'mtk_register_widgets' );
+add_action( 'widgets_init', 'vsdv_register_widgets' );
 
 // Donate link on manage plugin page
 function mtk_pluginspage_links( $links, $file ) {
