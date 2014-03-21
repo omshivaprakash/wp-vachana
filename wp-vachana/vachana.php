@@ -50,6 +50,7 @@ function todays_vachana() {
                         $display .= $value."<br />";
                 }
         $display .=  ": <b>". $decoded_response->vachana->vachanakaara->name."</b>";
+	$display .= "<b>-ಪ್ರಸ್ತುತ ಪಡಿಸಿವವರು</b>: <a href=http://vachana.sanchaya.net>ವಚನ ಸಂಚಯ</a>";
 
 	// Display Vachana
 	return $display;
