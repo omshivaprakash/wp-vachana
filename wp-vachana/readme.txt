@@ -5,8 +5,8 @@ License: GPLv3
 License URI: http://www.gnu.org/copyleft/gpl.html
 Tags: kannada, unicode, literature, vachana, sahitya, widget
 Requires at least: 2.9
-Tested up to: 3.8.1
-Stable tag: 1.0.1
+Tested up to: 4.7.4
+Stable tag: 2.0.0
 
 Display daily vachana from http://vachana.sanchaya.net
 
@@ -37,6 +37,10 @@ The vachana output wrapped in `<p>` tag with `vachana` ID and class. Use `#vacha
 Use Linuxaayan's website's  <a href="http://linuxaayana.net/contact-us/">contact form</a> to reach me. You can also use Vachana Sanchaya group to discuss further on other developments <a href="http://vachana.sanchaya.net/contact_us">here</a>. 
 
 == Changelog ==
+
+= 2.0.0 =
+* Implemented local file for storing vachana
+* Vachana is read from local file to reduce display time
 
 = 1.0.1 =
 * Fixed conflicting function

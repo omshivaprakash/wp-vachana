@@ -4,7 +4,7 @@ Plugin Name: Vachana Sanchaya Daily Vachana
 Plugin URI: https://github.com/omshivaprakash/wp-vachana
 Description: This widget is disgned to display the daily vachana from the site vachana.sanchaya.net to wordpress blogs. 
 Author: Omshivaprakash H L
-Version: 1.0.1
+Version: 2.0.0
 Author URI: http://www.linuxaayana.net
 */
 
@@ -30,8 +30,13 @@ Author URI: http://www.linuxaayana.net
 */
 
 
+
 function todays_vachana() {
-	 $url_send='http://vachana.sanchaya.net/api/today_vachana';
+        $file = plugin_dir_path( __FILE__ ) . '/todays_vachana.txt';
+        $mdate = date("Ymd", filemtime($file));
+        $date  = date("Ymd");
+        if ($mdate < $date) {
+        $url_send='http://vachana.sanchaya.net/api/today_vachana';
                         $curl = curl_init();
                          curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
                          curl_setopt($curl, CURLOPT_POST, false);
@@ -49,15 +54,26 @@ function todays_vachana() {
                 {
                         $display .= $value."<br />";
                 }
-        $display .=  ": <b><a href=http://vachana.sanchaya.net>". $decoded_response->vachana->vachanakaara->name."</a></b>";
-	
-	// Display Vachana
-	return $display;
+        $display .=  "<b>ವಚನಕಾರ - ‍". $decoded_response->vachana->vachanakaara->name."<br /> - <a href=http://vachana.sanchaya.net>‍ವಚನ ಸಂಚಯ</a></b>";‍
+
+        $open = fopen( $file, "w" );
+        $write = fputs( $open, $display );
+        fclose( $open );
+        }
+        // Display Vachana
+        //return $display;
+}
+
+function read_vachana() {
+        todays_vachana();
+        $vachanafile = plugin_dir_path( __FILE__ ) . '/todays_vachana.txt';
+        $lines = file_get_contents("$vachanafile");
+        return $lines;
 }
 
 function show_vachana() {
-	$vachanas = todays_vachana();
-	echo "<p id='vachana' class='vachana'>$vachanas</p>";
+        $vachanas = read_vachana();
+        echo "<p id='vachana' class='vachana'>$vachanas</p>";
 }
 
 class Vachana_Sanchaya_Widget extends WP_Widget {
@@ -103,7 +119,7 @@ class Vachana_Sanchaya_Widget extends WP_Widget {
 	
 	
 	function form( $instance ) {
-		$title = isset($instance['title']) ? esc_attr($instance['title']) : 'ವಚನ ಸಂಚಯ: ಇಂದಿನ ವಚನ ';
+		$title = isset($instance['title']) ? esc_attr($instance['title']) : 'ಇಂದಿನ ವಚನ ';
 		
 ?>
         <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
@@ -138,4 +154,4 @@ return $links;
 
 	}
 add_filter( 'plugin_row_meta', 'vsdv_pluginspage_links', 10, 2 );
-?>
+‍?>
